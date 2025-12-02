@@ -1,0 +1,15 @@
+{
+    "name": "CyberPlayer V1",
+    "short_name": "CyberPlayer",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#00f3ff",
+    "icons": [
+        {
+            "src": "vite.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
