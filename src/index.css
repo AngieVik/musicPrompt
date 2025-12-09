@@ -4,6 +4,7 @@
 :root {
   /* --- Colors (from code.html) --- */
   --primary: #13ec5b;
+  --neon-green: #13ec5b;
 
   --bg-light: #f0f2f5;
   --bg-dark: #121212;
@@ -27,24 +28,15 @@
   --text-secondary-light: #6b7280;
   --text-secondary-dark: #a0a0a0;
 
-  /* --- Shadows (Neumorphism) --- */
-  /* Light: Stronger contrast */
-  --shadow-neumorphic-light: 8px 8px 16px #c4cddb, -8px -8px 16px #ffffff;
-  /* Dark: Deep, higher contrast lighting */
-  --shadow-neumorphic-dark: 6px 6px 12px #080808, -6px -6px 12px #303030;
-
-  --shadow-neumorphic-inset-light: inset 6px 6px 12px #c4cddb, inset -6px -6px 12px #ffffff;
-  /* Dark Inset: "Deep" pressed look */
-  --shadow-neumorphic-inset-dark: inset 6px 6px 12px #050505, inset -6px -6px 12px #333333;
+  /* --- Glassmorphism Variables --- */
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
 
   /* --- Dynamic System Variables --- */
   --bg: var(--bg-light);
   --surface: var(--surface-light);
   --text-primary: var(--text-primary-light);
   --text-secondary: var(--text-secondary-light);
-
-  --shadow: var(--shadow-neumorphic-light);
-  --shadow-inset: var(--shadow-neumorphic-inset-light);
 
   --card-bg: var(--card-light);
   --border-color: rgba(0, 0, 0, 0.05);
@@ -58,9 +50,6 @@
   --surface: var(--surface-dark);
   --text-primary: var(--text-primary-dark);
   --text-secondary: var(--text-secondary-dark);
-
-  --shadow: var(--shadow-neumorphic-dark);
-  --shadow-inset: var(--shadow-neumorphic-inset-dark);
 
   --card-bg: var(--card-dark);
   --border-color: rgba(255, 255, 255, 0.05);
@@ -593,8 +582,16 @@ button {
   border-radius: 9999px;
 }
 
-.border-t {
-  border-top-width: 1px;
+.glass-panel {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: var(--glass-border);
+}
+
+.text-neon {
+  color: var(--neon-green);
+  text-shadow: 0 0 10px rgba(19, 236, 91, 0.5);
 }
 
 .border-b {

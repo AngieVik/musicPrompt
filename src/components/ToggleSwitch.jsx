@@ -1,52 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export const ToggleSwitch = ({ initial = false, onToggle }) => {
-    const [on, setOn] = useState(initial);
-
-    useEffect(() => {
-        setOn(initial);
-    }, [initial]);
-
-    const handleClick = () => {
-        const newState = !on;
-        setOn(newState);
-        if (onToggle) onToggle(newState);
-    };
-
+const ToggleSwitch = ({ value, onToggle, label }) => {
     return (
-        <div onClick={handleClick} className="relative w-12 h-6 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer">
-            <div
-                className={`absolute left-0 top-0 w-6 h-6 rounded-full shadow-md transform transition-transform`}
-                style={{
-                    transform: on ? 'translateX(100%)' : 'translateX(0)',
-                    backgroundColor: 'var(--primary)'
-                }}
-            ></div>
+        <div
+            className="flex items-center gap-3 cursor-pointer group"
+            onClick={() => onToggle(!value)}
+        >
+            <div className={`relative w-11 h-6 rounded-full transition-colors duration-300 ease-in-out ${value ? 'bg-primary' : 'bg-white/10'}`}>
+                <div className={`absolute top-0.5 left-0.5 bg-white w-5 h-5 rounded-full shadow-sm transition-transform duration-300 ease-in-out ${value ? 'translate-x-5' : 'translate-x-0'}`}></div>
+            </div>
+            {label && <span className="text-sm font-medium text-on-surface-variant-light dark:text-on-surface-variant-dark group-hover:text-primary transition-colors">{label}</span>}
         </div>
     );
 };
 
-export const SmallToggleSwitch = ({ initial = false, onToggle }) => {
-    const [active, setActive] = useState(initial);
-
-    useEffect(() => {
-        setActive(initial);
-    }, [initial]);
-
-    const handleClick = () => {
-        const newState = !active;
-        setActive(newState);
-        if (onToggle) onToggle(newState);
-    };
-
-    return (
-        <div onClick={handleClick} className={`w-10 h-5 rounded-full cursor-pointer relative transition-colors ${active ? '' : 'bg-gray-200 dark:bg-gray-700'}`} style={{ backgroundColor: active ? 'var(--primary)' : '' }}>
-            <div
-                className={`w-5 h-5 rounded-full bg-white shadow transform transition-transform`}
-                style={{
-                    transform: active ? 'translateX(100%)' : 'translateX(0)',
-                }}
-            ></div>
-        </div>
-    );
-};
+export default ToggleSwitch;

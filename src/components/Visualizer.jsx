@@ -83,7 +83,7 @@ const Visualizer = ({ analyser, isInteractive = false }) => {
     }, [analyser, isInteractive]);
 
     return (
-        <div className={`w-full h-full flex items-center justify-center ${isInteractive ? 'p-6' : 'p-6'} rounded-xl`} style={{ backgroundColor: 'var(--surface)' }}>
+        <div className={`w-full h-full flex items-center justify-center ${isInteractive ? 'p-6' : 'p-6'} rounded-xl bg-transparent`}>
             <canvas
                 ref={canvasRef}
                 width={isInteractive ? 400 : 200}
