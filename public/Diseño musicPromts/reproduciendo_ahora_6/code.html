@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mi Biblioteca - Colores Consistentes y Navegación Integrada</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec5b",
+              "background-light": "#f0f2f5",
+              "background-dark": "#121212",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e1e1e",
+              "on-surface-light": "#121212",
+              "on-surface-dark": "#e0e0e0",
+              "on-surface-variant-light": "#757575",
+              "on-surface-variant-dark": "#9e9e9e",
+            },
+            fontFamily: {
+              "display": ["Spline Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            boxShadow: {
+                'neumorphic-light': '5px 5px 10px #d9dbde, -5px -5px 10px #ffffff',
+                'neumorphic-dark': '5px 5px 10px #0d0d0d, -5px -5px 10px #171717',
+                'neumorphic-inset-light': 'inset 5px 5px 10px #d9dbde, inset -5px -5px 10px #ffffff',
+                'neumorphic-inset-dark': 'inset 5px 5px 10px #0d0d0d, inset -5px -5px 10px #171717'
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-on-surface-light dark:text-on-surface-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+<div class="flex items-center justify-between p-4 shrink-0">
+<div class="flex w-12 items-center justify-start">
+<button class="flex items-center justify-center rounded-full h-12 w-12 text-on-surface-light dark:text-on-surface-dark shadow-neumorphic-light dark:shadow-neumorphic-dark active:shadow-neumorphic-inset-light dark:active:shadow-neumorphic-inset-dark">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+</div>
+<h1 class="text-on-surface-light dark:text-on-surface-dark text-xl font-bold">Mi Biblioteca</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-full h-12 w-12 text-on-surface-light dark:text-on-surface-dark shadow-neumorphic-light dark:shadow-neumorphic-dark active:shadow-neumorphic-inset-light dark:active:shadow-neumorphic-inset-dark">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<div class="px-4 pb-4">
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-semibold rounded-full bg-primary text-black">Playlists</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-full text-on-surface-variant-light dark:text-on-surface-variant-dark shadow-neumorphic-light dark:shadow-neumorphic-dark active:shadow-neumorphic-inset-light dark:active:shadow-neumorphic-inset-dark">Artistas</button>
+<button class="px-4 py-2 text-sm font-semibold rounded-full text-on-surface-variant-light dark:text-on-surface-variant-dark shadow-neumorphic-light dark:shadow-neumorphic-dark active:shadow-neumorphic-inset-light dark:active:shadow-neumorphic-inset-dark">Álbumes</button>
+</div>
+</div>
+<div class="flex-grow px-4 overflow-y-auto pb-4" id="content-area">
+<div class="space-y-4" id="playlists">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-lg bg-background-light dark:bg-background-dark shadow-neumorphic-light dark:shadow-neumorphic-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary">add</span>
+</div>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">Crear nueva playlist</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Playlist 'Chill Vibes'" class="w-16 h-16 rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0DUt6lrmQf59n23rk24qJc-v__oPe33abFG0WE9z-91fdgHq_jwaqE7C7F6tizGqWJR80fFsrfkiwG2j9tjpji9swFS6itu2OJq0LxVCxQZ7hilgwAmsnKFiQNXTPoH64n7sg2D_8JIeT9bnAHcP26DNvDF8Th40GGe7qOovogih7eYxFBH5FaIbBpPjraKNOuUEOfmXkxVnzTMlEdZgAHLtZ5SiKQnbiFZPfEQo8LxlfgspnJrjPxfDuzMAE-ZFpVfKD5pklLNs"/>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">Chill Vibes</p>
+<p class="text-on-surface-variant-light dark:text-on-surface-variant-dark text-sm">por Ti • 50 canciones</p>
+</div>
+<button class="text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Playlist 'Workout Hits'" class="w-16 h-16 rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxcd-_v89qYB029Ms6i96d1pAfzPFENwR7EKil8Q6YiOtI_az-5o2weYoP2A2vKwTycgX_Kc9B2DPi9RRpwQ7m_L5678PHHzVzXOUM6Hg_NJu7PoBygsyfxuvRlFiLduhEBO3kPWCXVLvS9YEQlZIKJoiiuOU_Q6zRk3s2-oE5AKe1mVyySrk-OaJ8pcPa4iSW644uXVAF4JpK0kgJAzd4Wm0vJbNmd5O70lvY0VQqnvJYZXafYlshm2ysdK-vrOygoCVXsABJOBw"/>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">Workout Hits</p>
+<p class="text-on-surface-variant-light dark:text-on-surface-variant-dark text-sm">por Ti • 32 canciones</p>
+</div>
+<button class="text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Playlist 'Noche de estrellas'" class="w-16 h-16 rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh1a4wH1lrNBoNIY5xSl1QfMlG6-CJmWS5uV5CKp4rqXKCypZv_zZlvpln2TxKXdqPKZfNBNkzi-4qSYUXePh9mvP-RbiC4_k98Wnjy4kxrXjjVxs8BN3SD_1Fi6t7ev8a898HFSZJ1Nqe86cspBH30o_YjtAVbhHvFTLFRo10HzG7QsPdt-t526ivu4F5VOwFYRheTqSUjOjAK6FJStjS2aIcc4qe_YAFDCzV8G_UeIpIROMcqaxvtelh37HuGYmMJVIEEw6ySiM"/>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">Noche de estrellas</p>
+<p class="text-on-surface-variant-light dark:text-on-surface-variant-dark text-sm">por Ti • 78 canciones</p>
+</div>
+<button class="text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Playlist 'Indie Rock'" class="w-16 h-16 rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrZhGZlghjefTLUmGu3Qc_sMnrBz-l6wNo3H3sanHXyCNW6jB_I2M-itFzJgYLs2rIUqHpXnKo7o-s_Y-h-c3ne7M83FYLjVPf2Bdy-hHSWeTnHE7_nSieAOY_mIaZq-lVWB2yOuQI2es-u0B4TIs8ybez_XgcLL5H_RC5TBaU_yhl6rzwDVgYI7wGvhodBJT_qKt34JG6DYej3bFcHyFmc3jGtHnvPLFfYfWN9WTsTj79l9f4r6Hzf_TZ8AmwSs8NS4F4YVe641A"/>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">Indie Rock</p>
+<p class="text-on-surface-variant-light dark:text-on-surface-variant-dark text-sm">por Ti • 112 canciones</p>
+</div>
+<button class="text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="hidden space-y-4" id="artists">
+<div class="flex items-center gap-4">
+<img alt="Artista The Weeknd" class="w-16 h-16 rounded-full object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3YN42pM9tQHS7ukLaWohRV8usfmuYhES1pGyeUlbH_UN2ZecMG6dBemVvm-IpZME9fRJNT6D0ir4wOMVoTvMIsoTBYeGg3yFTWHla7cSkf83IaEcP89xGmt427fbCnqGBeJue9dCuNkq7csgF622hQEYPh5XodW0_CfAgTrJl4baxVlHx1mr-wTNORGsfeabX2TSLA77jwdbyUCIJU5ipAmYtkJs9PgmYqcwtMAPdMyBYfBdxIjbRjom-uRudyMUEsakmIZjCQUs"/>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">The Weeknd</p>
+</div>
+<button class="text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Artista Daft Punk" class="w-16 h-16 rounded-full object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARvRPmHDHC1Q7vXlaWRbII8E8LM9HNW3FklYZ_1652CCc1r-8Qc2kwahnDbMMTp5kEAoEGd8F2u9DE6SYQ9B3Vuey6q1Y9WO49tK2pwV7G535QLxMz17OGOxJJLKCXA5iiv9_LZ2B7dX_69Y7usgfkVfJ45IgNs9yl4i2MABPWm6Hqi1TrhXoJCi99ZBikvgoL3Oinib-nwkkzRjRMYvcvENPbUS7ABbGm5CQkurApTXjBIrm316NWu5JFOUt4yCN6l-fOdG7DVy8"/>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">Daft Punk</p>
+</div>
+<button class="text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Artista Tame Impala" class="w-16 h-16 rounded-full object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7ud2-eVHouwHFfdqbiVAXGqmD20zVRxkV2qZLWEkFlDVf7mLKGn174TxD7vfiyZ8Lku7nFlPPmJ6okcji6-R_UUZbbxwlcTkuKUDrUvuGcY-5AtzCvZmbpeR2tz3w8FlDQR8SHkamyrsVvb_AvPt67LdS9lp-rIVkTeUkJQIQWwiof4_9JvU0D-ZukNQ8WzhPyYH5Qp8wIMm5yDhffK29B-7aK_zGAmdDjihNu-vTRN03-hvu3ZExrsnyjkR0kOy4YkW3Jk63rzU"/>
+<div class="flex-1">
+<p class="text-on-surface-light dark:text-on-surface-dark font-semibold">Tame Impala</p>
+</div>
+<button class="text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="hidden grid grid-cols-2 gap-4" id="albums">
+<div class="flex flex-col items-start">
+<img alt="Álbum 'After Hours'" class="w-full aspect-square rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPGHc4a7XdW2ASp8WFvZNliAo8CU5ysCN9kI4VxanxOczUg-_jnSL-GBPjLn7HRQFzL7-Q33hWuCEmuZUj1ScGgEMHrnDX6nxp4XXEVclG4p0Gs_zwEeoJ1Qkg3iHKBxPS95wm4n3ztOUFaQeqLIuA0AD3usTuUMHDcoPPVxAzBsaj_Z-3vPWNbCCo-XTxjrqGLlCdhGS3Omd31ZyQTatzFzeMo9nhLEWutq8a7FkICmzZXq9AMLe2Tem1HszbW-PZ7RnKZIFvsoY"/>
+<p class="mt-2 text-on-surface-light dark:text-on-surface-dark font-semibold">After Hours</p>
+<p class="text-sm text-on-surface-variant-light dark:text-on-surface-variant-dark">The Weeknd</p>
+</div>
+<div class="flex flex-col items-start">
+<img alt="Álbum 'Discovery'" class="w-full aspect-square rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiMuU3q0QJLR8WksItLC9XDn7ntD0WbCMnY1BbXRk9OlT1OHUXzxQ9NC9al-12voWzSYF0YkZj3p5ED6Mi2M5EF6eVoCUdXF3skVLhpLQNEYDScXGsxkHbe8oxW1gDzYtnNnUKmm3w_UCoruoDQxobyyAzDWpKzuVBDUjW_3BzaqS5tiObn0TFC0ZldMSWVmxy-uxcgzDaeP1qEiavh1WK-gMuPTBsIygJiV1KQcorOb3Lp41De5OkQBZhc4LMVCItJwS9MaflMuI"/>
+<p class="mt-2 text-on-surface-light dark:text-on-surface-dark font-semibold">Discovery</p>
+<p class="text-sm text-on-surface-variant-light dark:text-on-surface-variant-dark">Daft Punk</p>
+</div>
+<div class="flex flex-col items-start">
+<img alt="Álbum 'Currents'" class="w-full aspect-square rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjU_nf_6Jr47rwWwhJtUt8XKrD1bUomVONRkc-lSTx_2xKkjC5AeMRtSpQD8cL7tZ9Wu82_paGoENfAkiQSba3AEMXh1u-LYppaSsFQwBTny47NMmoROO3pE7APlJuHM-iLKj0w7E7W3bNOAyI4_RJhSlW9Rxwu_m0K8FGAZ6QWY3zVhj9Uc_g9FGISHDQ_MdJSBBk1SfQrSCaT3Pfa5yZAiSOS4DnrZQSZkKkikAX1h_k4f4g42xFCoutG3dOiK_xtAQwlK6XzUE"/>
+<p class="mt-2 text-on-surface-light dark:text-on-surface-dark font-semibold">Currents</p>
+<p class="text-sm text-on-surface-variant-light dark:text-on-surface-variant-dark">Tame Impala</p>
+</div>
+<div class="flex flex-col items-start">
+<img alt="Álbum 'Random Access Memories'" class="w-full aspect-square rounded-lg object-cover shadow-neumorphic-light dark:shadow-neumorphic-dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK5k1L7uPoby5xIIoFOs3Fe2po2LwPNE5DdmM0geBIPH4VLaprtnyayJOhRnQo_xQerZuDRR0pn55ZEm1ZgRaRxBj57uBkMpu1wQTQXxtU0U1lgFBRiz6QcrhBCGBz6K9SuixbbQxv6dmbuQS84qEEMr2Va6VeI2aBYoyd9r_kC7VOhtCBDU0a4-CrvCkkKF6eGpS0cKUtRXIPC9lnJGdG4E0g1CYZO_qzkgMIAV9Xu1ekcBx7RS45ESpdJhLi8eIFyjXwR7_ctUA"/>
+<p class="mt-2 text-on-surface-light dark:text-on-surface-dark font-semibold">Random Access Memories</p>
+<p class="text-sm text-on-surface-variant-light dark:text-on-surface-variant-dark">Daft Punk</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-around bg-surface-light dark:bg-surface-dark px-6 py-2 pb-6 mt-auto shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.1)] dark:shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.4)]">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs">Inicio</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">search</span>
+<span class="text-xs">Buscar</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined filled">library_music</span>
+<span class="text-xs font-medium">Biblioteca</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant-light dark:text-on-surface-variant-dark">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs">Perfil</span>
+</div>
+</div>
+</div>
+</body></html>

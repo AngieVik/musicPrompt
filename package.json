@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "framer-motion": "^12.23.25",
+    "idb": "^8.0.3",
     "lucide-react": "^0.555.0",
+    "music-metadata-browser": "^2.5.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.10.1",
     "tone": "^15.1.22"
   },
   "devDependencies": {
